@@ -1,0 +1,8 @@
+name: Rank
+main: me.palapon2545.rank.pluginMain
+version: 1.10
+description:
+commands:
+  rank:
+    description: rank
+    
