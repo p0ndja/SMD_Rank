@@ -2,6 +2,7 @@ package me.palapon2545.rank;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -28,6 +29,8 @@ public class pluginMain extends JavaPlugin implements Listener{
 	
 	public final Logger logger = Logger.getLogger("Minecraft");
 	public pluginMain plugin;
+	
+	LinkedList <String> badWord = new LinkedList<String>();
 	
 	public void onDisable(){
 		PluginDescriptionFile pdfFile = this.getDescription();
@@ -106,40 +109,44 @@ public class pluginMain extends JavaPlugin implements Listener{
 	}
 	@EventHandler
 	public void playerChat(AsyncPlayerChatEvent event) {
+		badWord.add("xxx");
+		badWord.add("ควย");
+		badWord.add("หี");
+		badWord.add("สัส");
+		badWord.add("พ่อง");
+		badWord.add("แม่ง");
+		badWord.add("กาก");
+		badWord.add("กาก");
+		badWord.add("สาส");
+		badWord.add("สาส");
+		badWord.add("เหี้ย");
+		badWord.add("มึง");
+		badWord.add("กู");
+		badWord.add("เชี่ย");
+		badWord.add("เย็ด");
+		badWord.add("ไอ่");
+		badWord.add("หำ");
+		badWord.add("จิ๋ม");
+		badWord.add("อีดอกทอง");
+		badWord.add("หมอย");
+		badWord.add("อี");
+		badWord.add("Fuck");
+		badWord.add("Kuy");
+		badWord.add("Bitch");
+		badWord.add("Dick");
+		badWord.add("WTF");
+		badWord.add("Pussy");
+		badWord.add("มิง");
+		badWord.add("Stupid");
+		badWord.add("สัด");
+		badWord.add("ฆวย");
+		badWord.add("ฅวย");
+		badWord.add("8;p");
 		String f0 = event.getMessage().toLowerCase();
-		String f1 = f0.replaceAll("ควย", "§4§mΘΘΘ§r");
-		String f2 = f1.replaceAll("หี", "§4§mΘΘ§r");
-		String f3 = f2.replaceAll("สัส", "§4§mΘΘΘ§r");
-		String f4 = f3.replaceAll("พ่อง", "§4§mΘΘΘΘ§r");
-		String f5 = f4.replaceAll("แม่ง", "§4§mΘΘΘΘ§r");
-		String f6 = f5.replaceAll("กาก", "§4§mΘΘΘ§r");
-		String f7 = f6.replaceAll("กาก", "§4§mΘΘΘ§r");
-		String f8 = f7.replaceAll("สาส", "§4§mΘΘΘ§r");
-		String f9 = f8.replaceAll("สาส", "§4§mΘΘΘ§r");
-		String f10 = f9.replaceAll("เหี้ย", "§4§mΘΘΘΘ§r");
-		String f11 = f10.replaceAll("มึง", "§4§mΘΘΘ§r");
-		String f12 = f11.replaceAll("กู", "§4§mΘΘ§r");
-		String f13 = f12.replaceAll("เชี่ย", "§4§mΘΘΘΘΘ§r");
-		String f14 = f13.replaceAll("เย็ด", "§4§mΘΘΘΘ§r");
-		String f15 = f14.replaceAll("ไอ่", "§4§mΘΘΘ§r");
-		String f16 = f15.replaceAll("หำ", "§4§mΘΘΘ§r");
-		String f17 = f16.replaceAll("จิ๋ม", "§4§mΘΘΘΘ§r");
-		String f18 = f17.replaceAll("อีดอกทอง", "§4§mΘΘΘΘΘΘΘΘ§r");
-		String f19 = f18.replaceAll("หมอย", "§4§mΘΘΘΘ§r");
-		String f20 = f19.replaceAll("อี", "§4§mΘΘ§r");
-		String f21 = f20.replaceAll("Fuck", "§4§mΘΘΘΘ§r");
-		String f22 = f21.replaceAll("Kuy", "§4§mΘΘΘ§r");
-		String f23 = f22.replaceAll("Bitch", "§4§mΘΘΘΘ§r");
-		String f24 = f23.replaceAll("Dick", "§4§mΘΘΘΘ§r");
-		String f25 = f24.replaceAll("WTF", "§4§mΘΘΘ§r");
-		String f26 = f25.replaceAll("Pussy", "§4§mΘΘΘΘΘ§r");
-		String f27 = f26.replaceAll("มิง", "§4§mΘΘΘ§r");
-		String f28 = f27.replaceAll("Stupid", "§4§mΘΘΘΘΘΘ§r");
-		String f29 = f28.replaceAll("สัด", "§4§mΘΘΘ§r");
-		String f30 = f29.replaceAll("ฆวย", "§4§mΘΘΘ§r");
-		String f31 = f30.replaceAll("ฅวย", "§4§mΘΘΘ§r");
-		String f32 = f31.replaceAll("8;p", "§4§mΘΘΘ§r");
-			String message1 = ChatColor.GRAY+": "+ChatColor.WHITE+f32; 
+		for (int i = 0 ; i < badWord.size() ; i++ ) {
+		    f0.replaceAll(badWord.get(i), "ΘΘΘ");
+		}
+		String message1 = ChatColor.GRAY+": "+ChatColor.WHITE+f0;
 	Player player = event.getPlayer(); 
 	String playerName = player.getName();
 	//UserData
